@@ -1,1 +1,1 @@
-window.PUBLIC_APP_SETTING_BACKEND_API='https://localhost:7101//';
+window.PUBLIC_APP_SETTING_BACKEND_API='https://localhost:7101/';
