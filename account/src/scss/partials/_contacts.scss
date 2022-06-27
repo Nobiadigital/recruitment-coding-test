@@ -1,0 +1,13 @@
+.contacts {
+  &__col {
+    margin-bottom: 20px;
+  }
+}
+
+.contacts {
+  @media screen and (min-width: 767px) {
+    .divider {
+      border-color: transparent;
+    }
+  }
+}

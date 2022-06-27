@@ -1,0 +1,17 @@
+.account-details-page {
+  .alert {
+    margin: 30px 0 20px 0;
+  }
+
+  .button {
+    margin-top: 20px;
+  }
+
+  .alert + .button {
+    margin-top: 0;
+  }
+
+  h4 {
+    margin: 0 0 30px 0;
+  }
+}

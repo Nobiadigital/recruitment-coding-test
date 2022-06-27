@@ -1,0 +1,28 @@
+.marketing-preferences {
+
+  &__title {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__col {
+    @media screen and (max-width: 767px) {
+      &:first-child {
+        margin-bottom: 20px;
+      }
+    }
+
+    p {
+      color: $primary-80;
+
+      a {
+        text-decoration: underline;
+      }
+
+      &:last-of-type {
+        margin: 0 0 0 0;
+      }
+    }
+  }
+}

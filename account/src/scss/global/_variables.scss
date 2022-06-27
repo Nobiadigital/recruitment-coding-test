@@ -1,0 +1,132 @@
+// Main colors
+$white: #ffffff;
+$primary: #122126;
+$accent-1: #ffd64d;
+$accent-2: #be3434;
+
+// Primary shades
+$primary-90: #2a373c;
+$primary-80: #414d51;
+$primary-70: #596467;
+$primary-60: #717a7d;
+$primary-50: #899093;
+$primary-40: #a0a6a8;
+$primary-20: #d0d3d4;
+$primary-10: #e7e9e9;
+$primary-5: #f3f4f4;
+
+// Accent 1 shades
+$accent-1-80: #ffde71;
+$accent-1-60: #ffe694;
+$accent-1-40: #ffefb8;
+$accent-1-20: #fff7db;
+$accent-1-10: #fffbed;
+
+// Function colors
+$alert-dark: #c32222;
+$alert: #d76b6b;
+$alert-light: #f2cece;
+
+$success-dark: #058a4a;
+$success: #69b992;
+$success-light: #f6fffb;
+
+$assistive-dark: #0057a8;
+$assistive: #6dafee;
+$assistive-light: #ccddee;
+
+// Typography
+$headings-margin: 0 0 0.25em 0;
+
+// Grid
+$grid-width: 1440px;
+$screen-padding: 96px;
+$screen-padding-mobile: 24px;
+$gutter: 12px;
+$gutter-mobile: 6px;
+
+// Blocks
+$block-margin: 42px;
+
+// Columns
+$twelve: 100%;
+$eleven: 91.666667%;
+$ten: 83.333333%;
+$nine: 75%;
+$eight: 66.666667%;
+$seven: 58.333333%;
+$six: 50%;
+$five: 41.666667%;
+$four: 33.333333%;
+$three: 25%;
+$two: 16.666667%;
+$one: 8.333333%;
+
+// Arrays
+$colors: (
+  "primary": $primary,
+  "primary-90": $primary-90,
+  "primary-80": $primary-80,
+  "primary-70": $primary-70,
+  "primary-60": $primary-60,
+  "primary-50": $primary-50,
+  "primary-40": $primary-40,
+  "primary-20": $primary-20,
+  "primary-10": $primary-10,
+  "primary-5": $primary-5,
+  "white": $white,
+  "accent-1": $accent-1,
+  "accent-1-80": $accent-1-80,
+  "accent-1-60": $accent-1-60,
+  "accent-1-40": $accent-1-40,
+  "accent-1-20": $accent-1-20,
+  "accent-1-10": $accent-1-10,
+  "accent-2": $accent-2,
+  "alert-dark": $alert-dark,
+  "alert": $alert,
+  "alert-light": $alert-light,
+  "success-dark": $success-dark,
+  "success": $success,
+  "success-light": $success-light,
+  "assistive-dark": $assistive-dark,
+  "assistive": $assistive,
+  "assistive-light": $assistive-light,
+);
+
+$widths: (
+  "sm": sm,
+  "md": md,
+  "lg": lg,
+  "xl": xl,
+  "xxl": xxl,
+);
+
+$sizes: (
+  "1": $one,
+  "2": $two,
+  "3": $three,
+  "4": $four,
+  "5": $five,
+  "6": $six,
+  "7": $seven,
+  "8": $eight,
+  "9": $nine,
+  "10": $ten,
+  "11": $eleven,
+  "12": $twelve,
+);
+
+$alignments: (
+  "top": flex-start,
+  "center": center,
+  "bottom": flex-end,
+  "stretch": stretch,
+);
+
+$justifies: (
+  "start": flex-start,
+  "center": center,
+  "end": flex-end,
+  "between": space-between,
+  "around": space-around,
+);

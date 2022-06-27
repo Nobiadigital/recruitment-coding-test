@@ -1,0 +1,43 @@
+.balance {
+  &__col {
+    border: 1px solid $primary-20;
+    padding: 24px;
+    margin-bottom: 20px;
+
+    em {
+      display: block;
+      text-align: center;
+      font-style: normal;
+      word-break: break-all;
+    }
+
+    span {
+      display: block;
+      width: 100%;
+      text-align: center;
+      color: $primary-80;
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+
+    hr {
+      border: 1px solid $primary-20;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 14px;
+      color: $primary-80;
+      line-height: 20px;
+
+      b {
+        font-size: 16px;
+        display: inline-block;
+        font-weight: 600;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import 'scss/global/reset';
+@import 'scss/global/variables';
+@import 'scss/global/mixins';
+@import 'scss/global/grid';
+@import 'scss/global/fonts';
+@import 'scss/global/icons';
+@import 'scss/global/utils';
+@import 'scss/global/buttons';
+@import 'scss/global/typography';
+@import 'scss/global/form';
+
+body {
+	font-family: 'Campton', sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #FBFBFB;
+}
+
+.app {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+main {
+	background-color: $white;
+	border: 1px solid $primary-5;
+	padding-bottom: 50px;
+	&.col {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+// Partials
+@import 'scss/partials/financial-summary';
+@import 'scss/partials/company-details';
+@import 'scss/partials/marketing-preferences';
+@import 'scss/partials/contacts';
+@import 'scss/partials/credit-information';
+@import 'scss/partials/preferred-store';
+@import 'scss/partials/balance';
+@import 'scss/partials/authentification';
+
+// Components
+@import 'scss/components/header';
+@import 'scss/components/sidenavigation';
+@import 'scss/components/bottomnavigation';
+@import 'scss/components/table';
+@import 'scss/components/account-status';
+
+
+// Pages
+@import 'scss/pages/account-details';
+@import 'scss/pages/history';

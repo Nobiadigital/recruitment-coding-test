@@ -1,0 +1,33 @@
+.company-details {
+  margin: 40px 0;
+
+  &__title {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__col {
+    margin-bottom: 20px;
+
+    p {
+      word-break: break-all;
+      color: $primary-80;
+      &:last-of-type {
+        margin: 0 0 0 0;
+      }
+    }
+  }
+}
+
+.company-details-account {
+  &__col {
+    margin-bottom: 20px;
+
+    @media screen and (min-width: 767px) {
+      .divider {
+        border-color: transparent;
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+.box-shadow {
+  &--primary-80 {
+    box-shadow: 4px 4px 0 $primary-80;
+  }
+  &--primary-20 {
+    box-shadow: 4px 4px 0 $primary-20;
+  }
+  &--accent-1 {
+    box-shadow: 4px 4px 0 $accent-1;
+  }
+}
+
+.main-box {
+  padding: 0 50px;
+  margin: 50px 0;
+}
+
+.divider {
+  width: 100%;
+  border: 0.5px solid $primary-20;
+  margin: 40px 0;
+}
+
+.alert {
+  border: 1px solid;
+  padding: 6px 6px 6px 42px;
+  position: relative;
+
+  em {
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  &:before {
+    @include get-icon("\e90b");
+    font-size: 18px;
+    position: absolute;
+    display: block;
+    top: 8px;
+    left: 14px;
+  }
+
+  &--assistive {
+    border-color: $assistive-dark;
+    background-color: $assistive-light;
+
+    &:before {
+      content: "\e909";
+      color: $assistive-dark;
+    }
+  }
+
+  &--failure {
+    border-color: $alert-dark;
+    background-color: $alert-light;
+
+    &:before {
+      color: $alert-dark;
+    }
+  }
+
+  &--success {
+    border-color: $success-dark;
+    background-color: $success-light;
+
+    &:before {
+      content: "\e933";
+      color: $success-dark;
+    }
+  }
+}
+
+.border {
+  position: relative;
+
+  &:after {
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: $primary-20;
+    position: absolute;
+    top: 0;
+  }
+
+  &--after {
+    padding-right: calc($gutter * 2);
+
+    &:after {
+      right: 0;
+    }
+
+    + .col {
+      padding-left: calc($gutter * 2);
+    }
+  }
+}
+
+// Full width
+.fullwidth {
+  &--mobile {
+    @include mq-down(md) {
+      max-width: calc(100% + ($screen-padding-mobile * 2));
+      width: calc(100% + ($screen-padding-mobile * 2));
+      flex: 0 0 calc(100% + ($screen-padding-mobile * 2));
+      margin-left: -$screen-padding-mobile;
+      margin-right: -$screen-padding-mobile;
+    }
+  }
+}
+
+// Images
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.cover {
+  &--bg {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+}
+
+// Blocks
+.block {
+  margin-top: $block-margin;
+  margin-bottom: $block-margin;
+}
+
+// Color utilities
+@each $name, $color in $colors {
+  .bg--#{$name} {
+    background-color: $color;
+  }
+  .color--#{$name} {
+    color: $color;
+  }
+  .box-shadow--#{$name} {
+    box-shadow: 4px 4px 0 $color;
+  }
+}

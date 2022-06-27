@@ -1,0 +1,15 @@
+generated/* linguist-generated=true
+
+* text eol=crlf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.env text eol=lf
+*.sh text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+projects.txt text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf

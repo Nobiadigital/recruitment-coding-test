@@ -1,0 +1,169 @@
+@import "functions";
+
+// Media query
+// Breakpoints
+$grid-breakpoints: (
+  sm: 576px,
+  md: 767px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+) !default;
+
+// When you are thinking mobile first
+// @Usage: @include mq-up(md) {}
+@mixin mq-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// When you are thinking desktop first
+// @Usage: @include mq-down(md) {}
+@mixin mq-down($name, $breakpoints: $grid-breakpoints) {
+  $max: breakpoint-max($name, $breakpoints);
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// When you want something to only happen between to widths
+// @Usage: @include mq-between(md, xl) {}
+@mixin mq-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($lower, $breakpoints);
+  $max: breakpoint-max($upper, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include mq-up($lower, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include mq-down($upper, $breakpoints) {
+      @content;
+    }
+  }
+}
+
+// Headings
+@mixin h1() {
+  font-size: 42px;
+  line-height: 52px;
+  margin: $headings-margin;
+
+  @include mq-up(md) {
+    font-size: 49px;
+    line-height: 61px;
+  }
+}
+
+@mixin h2() {
+  font-size: 34px;
+  line-height: 42px;
+  margin: $headings-margin;
+  font-weight: 500;
+
+  @include mq-up(md) {
+    font-size: 39px;
+    line-height: 48px;
+  }
+}
+
+@mixin h3() {
+  font-size: 27px;
+  line-height: 34px;
+  margin: $headings-margin;
+  font-weight: 500;
+
+  @include mq-up(md) {
+    font-size: 31px;
+    line-height: 39px;
+  }
+}
+
+@mixin h4() {
+  font-size: 22px;
+  line-height: 27px;
+  margin: $headings-margin;
+  font-weight: 500;
+
+  @include mq-up(md) {
+    font-size: 25px;
+    line-height: 31px;
+  }
+}
+
+@mixin h5() {
+  font-size: 18px;
+  line-height: 22px;
+  margin: $headings-margin;
+
+  @include mq-up(md) {
+    font-size: 20px;
+    line-height: 25px;
+  }
+}
+
+@mixin preamble() {
+  font-size: 18px;
+  line-height: 22px;
+
+  @include mq-up(md) {
+    font-size: 20px;
+    line-height: 25px;
+  }
+}
+
+@mixin paragraph() {
+  font-size: 14px;
+  line-height: 21px;
+
+  @include mq-up(md) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@mixin paragraph-small() {
+  font-size: 13px;
+  line-height: 16px;
+
+  @include mq-up(md) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+@mixin paragraph-micro() {
+  font-size: 12px;
+  line-height: 15px;
+}
+
+// Icon mixin
+@mixin get-icon($icon: "\e913") {
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  content: $icon;
+}

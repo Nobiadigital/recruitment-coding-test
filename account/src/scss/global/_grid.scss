@@ -1,0 +1,133 @@
+.grid {
+  $self: &;
+  width: 100%;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+    max-width: $grid-width;
+    margin: 0 auto;
+    padding-left: $screen-padding-mobile;
+    padding-right: $screen-padding-mobile;
+
+    @include mq-up(md) {
+      padding-left: $screen-padding;
+      padding-right: $screen-padding;
+    }
+
+    &--collapsed {
+      padding-left: 0;
+      padding-right: 0;
+      #{$self} {
+        &__wrapper {
+          margin-left: 0;
+          margin-right: 0;
+          .col {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+      }
+    }
+
+    // Columns alignment
+    // Vertically
+    @each $class, $alignment in $alignments {
+      &--#{$class} {
+        align-items: $alignment;
+      }
+    }
+    // Horizontally
+    @each $class, $justify in $justifies {
+      &--#{$class} {
+        justify-content: $justify;
+      }
+    }
+  }
+}
+
+.col {
+  display: block;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding-left: $gutter-mobile;
+  padding-right: $gutter-mobile;
+
+  @include mq-up(md) {
+    padding-left: $gutter;
+    padding-right: $gutter;
+  }
+
+  // Setting up base classes for grid columns
+  @each $size, $var in $sizes {
+    &--#{$size} {
+      max-width: $var;
+      flex: 0 0 $var;
+    }
+  }
+
+  // Setting breakpoint column classes
+  @each $bp, $width in $widths {
+    @include mq-up($width) {
+      &--#{$bp} {
+        @each $size, $var in $sizes {
+          &--#{$size} {
+            max-width: $var;
+            flex: 0 0 $var;
+          }
+        }
+      }
+    }
+  }
+
+  // Push alignments
+  &.push {
+    // Setting up default classes for push
+    @each $size, $var in $sizes {
+      &--#{$size} {
+        margin-left: $var;
+      }
+    }
+
+    @each $bp, $width in $widths {
+      @include mq-up($width) {
+        &--#{$bp} {
+          @each $size, $var in $sizes {
+            &--#{$size} {
+              margin-left: $var;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Make col a container
+  &--flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  // Dont break grid
+  &--wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  // Columns alignment
+  // Vertically
+  @each $class, $alignment in $alignments {
+    &--#{$class} {
+      align-items: $alignment;
+    }
+  }
+  // Horizontally
+  @each $class, $justify in $justifies {
+    &--#{$class} {
+      justify-content: $justify;
+    }
+  }
+}

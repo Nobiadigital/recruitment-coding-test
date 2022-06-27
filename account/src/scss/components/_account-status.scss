@@ -1,0 +1,33 @@
+.account-status {
+	border: 2px solid $primary;
+	background-color: $primary-5;
+	font-weight: 400;
+	font-size: 16px;
+	padding: 6px 12px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 230px;
+
+	.status {
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		margin-right: 6px;
+
+		&--active {
+			background-color: $success-dark;
+		}
+		&--deactivated {
+			background-color: $alert-dark;
+		}
+
+	}
+
+	em {
+		font-style: normal;
+		font-weight: 500;
+		margin-left: 5px;
+	}
+}

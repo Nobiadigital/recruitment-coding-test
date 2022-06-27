@@ -1,0 +1,44 @@
+// Alerts
+.alert {
+  border: 1px solid;
+  padding: 6px 6px 6px 42px;
+  position: relative;
+
+  &:before {
+    @include get-icon("\e90b");
+    font-size: 18px;
+    position: absolute;
+    display: block;
+    top: 8px;
+    left: 14px;
+  }
+
+  &--assistive {
+    border-color: $assistive-dark;
+    background-color: $assistive-light;
+
+    &:before {
+      content: "\e909";
+      color: $assistive-dark;
+    }
+  }
+
+  &--failure {
+    border-color: $alert-dark;
+    background-color: $alert-light;
+
+    &:before {
+      color: $alert-dark;
+    }
+  }
+
+  &--success {
+    border-color: $success-dark;
+    background-color: $success-light;
+
+    &:before {
+      content: "\e933";
+      color: $success-dark;
+    }
+  }
+}

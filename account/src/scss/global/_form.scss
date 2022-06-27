@@ -1,0 +1,264 @@
+// @import 'tom-select/src/scss/tom-select.scss';
+
+@mixin inputResets() {
+  border-radius: 0;
+  border: none;
+  font-family: "Campton", sans-serif;
+  font-size: 14px;
+  padding: 12px 18px;
+  outline: none;
+  box-shadow: inset 0px 0px 0px 1px $primary-40;
+  color: $primary;
+  transition: box-shadow 0.2s;
+}
+
+.form {
+  &__select,
+  &__input,
+  &__email {
+    width: 100%;
+    input {
+      @include inputResets();
+      height: 48px;
+      width: 100%;
+
+      &::placeholder {
+        opacity: 1;
+        color: $primary-50;
+      }
+
+      &:focus {
+        box-shadow: inset 0px 0px 0px 2px $primary-70;
+      }
+
+      &.has-value {
+        box-shadow: inset 0px 0px 0px 1px $primary-70;
+      }
+    }
+
+    .form__label {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+
+      &--optional {
+        color: $primary-50;
+        text-align: right;
+      }
+    }
+  }
+
+  &__textarea {
+    textarea {
+      @include inputResets();
+      min-width: 320px;
+
+      &:focus {
+        box-shadow: inset 0px 0px 0px 2px $primary-70;
+      }
+
+      &.has-value {
+        box-shadow: inset 0px 0px 0px 1px $primary-70;
+      }
+    }
+  }
+
+  &__radio {
+    --size: 24px;
+    --padding: 32px;
+    --font-size: 16px;
+
+    &--large {
+      --size: 26px;
+      --padding: 36px;
+      --font-size: 18px;
+    }
+
+    margin: 0 0 1em 0;
+
+    label {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      height: var(--size);
+      padding-left: var(--padding);
+      font-size: var(--font-size);
+      font-weight: 600;
+      cursor: pointer;
+
+      &:before {
+        content: "";
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        width: var(--size);
+        height: var(--size);
+        border: 2px solid $primary;
+        left: 0;
+        background-color: $white;
+        box-shadow: none;
+        transition: box-shadow 0.2s, background-color 0.2s;
+      }
+    }
+
+    input[type="radio"] {
+      display: none;
+
+      &:checked {
+        + label {
+          &:before {
+            box-shadow: inset 0px 0px 0px 3px $white;
+            background-color: $primary;
+          }
+        }
+      }
+    }
+  }
+
+  &__checkbox {
+    --size: 24px;
+    --padding: 32px;
+    --font-size: 16px;
+    --icon-size: 20px;
+
+    &--large {
+      --size: 26px;
+      --padding: 36px;
+      --font-size: 18px;
+      --icon-size: 22px;
+    }
+
+    margin: 0 0 1em 0;
+
+    label {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      height: var(--size);
+      padding-left: var(--padding);
+      font-size: var(--font-size);
+      font-weight: 600;
+      cursor: pointer;
+
+      &:before,
+      &:after {
+        display: block;
+        position: absolute;
+      }
+
+      &:before {
+        content: "";
+        width: var(--size);
+        height: var(--size);
+        border: 2px solid $primary;
+        background-color: $white;
+        box-shadow: none;
+        left: 0;
+        transition: box-shadow 0.2s, background-color 0.2s;
+      }
+
+      &:after {
+        @include get-icon("\e932");
+        color: $white;
+        font-size: var(--icon-size);
+        left: 4px;
+        top: 2px;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+    }
+
+    input[type="checkbox"] {
+      display: none;
+
+      &:checked {
+        + label {
+          &:before {
+            background-color: $primary;
+            box-shadow: inset 0px 0px 0px 3px $white;
+          }
+          &:after {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__label {
+    width: 100%;
+    display: block;
+    margin: 0 0 5px 0;
+  }
+}
+
+// Select field
+.ts-wrapper {
+  .ts-control {
+    @include inputResets();
+    position: relative;
+
+    &:after {
+      @include get-icon("\e935");
+
+      font-size: 22px;
+      position: absolute;
+      top: 50%;
+      right: 18px;
+      transform: translateY(-50%);
+      transition: transform 0.2s;
+    }
+  }
+
+  .ts-dropdown {
+    border: 2px solid $primary-70;
+    border-radius: 0;
+    margin: 0;
+    box-shadow: none;
+
+    .ts-dropdown-content {
+      padding: 10px;
+      .option {
+        padding: 12px 28px 12px 12px;
+
+        &.selected.active {
+          background-color: $success-light;
+          position: relative;
+
+          &:after {
+            @include get-icon("\e932");
+            color: $success;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            font-size: 22px;
+            transform: translateY(-50%);
+          }
+        }
+
+        &:hover {
+          border-radius: 2px;
+          background-color: $primary-5;
+        }
+      }
+    }
+  }
+
+  &.focus {
+    .ts-control {
+      box-shadow: inset 0px 0px 0px 2px $primary-70;
+
+      &:after {
+        transform: translateY(-50%) rotate(-180deg);
+      }
+    }
+  }
+
+  &.dropdown-active {
+    .ts-control {
+      &:after {
+        transform: translateY(-50%) rotate(-180deg);
+      }
+    }
+  }
+}

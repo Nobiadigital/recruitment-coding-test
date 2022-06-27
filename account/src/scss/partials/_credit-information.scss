@@ -1,0 +1,25 @@
+.credit-information {
+
+  @media screen and (min-width: 767px ) {
+    .divider {
+      border-color: transparent;
+    }
+  }
+  
+  &__title {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__col {
+    margin: 20px 0;
+
+    p {
+      color: $primary-80;
+      &:last-of-type {
+        margin: 0 0 0 0;
+      }
+    }
+  }
+}
