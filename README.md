@@ -10,9 +10,7 @@ Edit the React app configuration files to get it to connect to your instance.
 
 # Task 1
 
-The app is showing 2 menus at once. Only one of them should be visible in Mobile vs. Desktop.
-
-Please make it so that it looks OK in both versions.
+The app currently has 2 menus defined. **Delete one of them**, and style the remaining one differently depending on screen size.
 
 # Task 2
 
