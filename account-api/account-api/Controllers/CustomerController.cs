@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using MagnetTradeAccountApi.Injected;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MagnetTradeAccountApi.Controllers
@@ -7,6 +8,11 @@ namespace MagnetTradeAccountApi.Controllers
     [Route("customer")]
     public class CustomerController : Controller
     {
+        public CustomerController(IThisIsInjected thisIsInjected)
+        {
+            thisIsInjected.Hello(); // Don't remove this! Fix the Dependency Injection instead!
+        }
+
         [HttpGet("information-fake")]
         public MagnetTradeCustomer GetFake()
         {
