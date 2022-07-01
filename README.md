@@ -4,12 +4,12 @@ Welcome to the Nobia Digital recruitment test!
 
 # INSTRUCTIONS
 
-Clone this repo, get both the React app and the .NET Core app running.
+Clone this repo, get both the frontend application and the .NET Core application running.
 
 
 # Task 1
 
-Fix the API URL problem in the frontend application.
+Fix the API URL problem in the frontend application so that it can read data from the .NET Core application.
 
 # Task 1
 
