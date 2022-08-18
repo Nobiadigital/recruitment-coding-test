@@ -9,7 +9,8 @@ function ContextProvider({ children }) {
 
     useEffect(() => {
         axios.create({
-            baseURL: window.PUBLIC_APP_SETTING_BACKEND_API,
+            //baseURL: window.PUBLIC_APP_SETTING_BACKEND_API,
+            baseURL: "https://localhost:7101/",
             withCredentials: false,
             headers: {
                 Accept: "application/json",
@@ -24,7 +25,8 @@ function ContextProvider({ children }) {
 
     useEffect(() => {
         axios.create({
-            baseURL: window.PUBLIC_APP_SETTING_BACKEND_API,
+            //baseURL: window.PUBLIC_APP_SETTING_BACKEND_API,
+            baseURL: "https://localhost:7101/",
             withCredentials: false,
             headers: {
                 Accept: "application/json",
@@ -39,7 +41,8 @@ function ContextProvider({ children }) {
 
     useEffect(() => {
         axios.create({
-            baseURL: window.PUBLIC_APP_SETTING_BACKEND_API,
+            //baseURL: window.PUBLIC_APP_SETTING_BACKEND_API,
+            baseURL: "https://localhost:7101/",
             withCredentials: false,
             headers: {
                 Accept: "application/json",

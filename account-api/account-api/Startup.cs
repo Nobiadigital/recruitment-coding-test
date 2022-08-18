@@ -1,6 +1,6 @@
+using MagnetTradeAccountApi.Injected;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerUI;
-using System.Net;
 
 namespace MagnetTradeAccountApi
 {
@@ -29,6 +29,8 @@ namespace MagnetTradeAccountApi
                     Version = "v1",
                 });
             });
+
+            services.AddSingleton<IThisIsInjected,ThisIsInjected>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

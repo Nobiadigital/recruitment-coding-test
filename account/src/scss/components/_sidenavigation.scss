@@ -69,4 +69,19 @@
       }
     }
   }
+
+  @media screen and (min-width: 768px) {
+    a {
+        margin: 24px 20px;
+      i {
+        width: 80px;
+        height: 80px;
+        font-size: 40px;
+      }
+    }
+
+    h5 {
+      font-size: 50px;
+    }
+  }
 }
