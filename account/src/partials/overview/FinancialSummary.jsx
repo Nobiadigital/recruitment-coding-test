@@ -1,16 +1,17 @@
 import Button from "../../components/button/Button";
 import { useContext } from 'react';
 import Context from '../../data/Context';
+import ContextTest from '../../data/FinancialDataMockup';
 
 const FinancialSummary = () => {
   const transactionSummary = useContext(Context).transactionSummary;
 
   const financialCol = [
     {
-      amount: `${transactionSummary.todayBalance}`,
+      amount: `${ContextTest[0].amount}`,
       title: 'Total balance',
       desc: 'Your available credit',
-      text:  `${transactionSummary.availableCredit}`,
+      text:  `${ContextTest[0].text}`,
       btnText: 'Request new credit limit',
       btnIcon: 'icon-arrow-up-right',
       btnLink: '#'
@@ -32,6 +33,12 @@ const FinancialSummary = () => {
       btnText: 'Pay an amount',
       btnIcon: 'icon-credit-card',
       btnLink: '#',
+    },
+    {
+      amount: `${transactionSummary}`,
+      title: `Test summary fake endpoint`,
+      desc: null,
+      text: 'Test summary fake endpoint',
     }
   ];
   
