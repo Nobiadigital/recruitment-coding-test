@@ -8,7 +8,7 @@ import PreferredStore from "../partials/account-details/PreferredStore";
 
 const AccountDetails = () => {
   return (
-    <main className="col col--lg--9 overview box-shadow--primary-80">
+    <main className="overview box-shadow--primary-80">
       <Header
         title="Account Details"
         preamble="Verify and update your account details"

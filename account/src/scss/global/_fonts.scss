@@ -1,0 +1,46 @@
+$fontUrl: "static/fonts/";
+
+@font-face {
+  font-weight: 300;
+  font-style: normal;
+  font-family: "Campton";
+  src: url("#{$fontUrl}Campton-Light.woff2") format("woff2"),
+    url("#{$fontUrl}Campton-Light.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Campton";
+  src: url("#{$fontUrl}Campton-Book.woff2") format("woff2"),
+    url("#{$fontUrl}Campton-Book.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 500;
+  font-style: normal;
+  font-family: "Campton";
+  src: url("#{$fontUrl}Campton-Medium.woff2") format("woff2"),
+    url("#{$fontUrl}Campton-Medium.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 600;
+  font-style: normal;
+  font-family: "Campton";
+  src: url("#{$fontUrl}Campton-Semibold.woff2") format("woff2"),
+    url("#{$fontUrl}Campton-Semibold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Campton";
+  src: url("#{$fontUrl}Campton-Bold.woff2") format("woff2"),
+    url("#{$fontUrl}Campton-Bold.woff") format("woff");
+  font-display: swap;
+}

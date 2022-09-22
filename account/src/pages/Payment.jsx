@@ -4,7 +4,7 @@ import Balance from "../partials/payment/Balance";
 
 const Payment = () => {
   return (
-    <main className="´payment col col--lg--9 overview box-shadow--primary-80">
+    <main className="payment overview box-shadow--primary-80">
       <Header
         title="Payment"
         preamble="Make a payment on your outstanding balance below in just a few simple steps"

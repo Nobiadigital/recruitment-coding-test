@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 
-const BottomNavigation = () => {
+const TopNavigation = () => {
 
   return (
     <>
-      <div className="col col--12 bottomnavigation box-shadow--accent-1 ">
+      <div className="topnavigation box-shadow--accent-1 ">
         <NavLink to="/">
           <i className="icon icon-clipboard"></i>
           <h5>Overview</h5>
@@ -29,4 +29,4 @@ const BottomNavigation = () => {
   );
 };
 
-export default BottomNavigation;
+export default TopNavigation;

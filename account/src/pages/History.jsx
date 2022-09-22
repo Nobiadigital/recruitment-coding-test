@@ -44,7 +44,7 @@ const History = () => {
   };
 
   return (
-    <main className="col col--lg--9 overview box-shadow--primary-80">
+    <main className="overview box-shadow--primary-80">
       <Header
         title="History"
         preamble="Check your payment history and invoice status"

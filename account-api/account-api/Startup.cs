@@ -1,6 +1,6 @@
+using MagnetTradeAccountApi.Injected;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerUI;
-using System.Net;
 
 namespace MagnetTradeAccountApi
 {
@@ -10,6 +10,11 @@ namespace MagnetTradeAccountApi
         {
             services.AddControllers();
             services.AddHttpContextAccessor();
+
+            /* Solution 3: Register service for DI */
+            services.AddSingleton<IThisIsInjected, ThisIsInjected>();
+
+            services.AddSingleton<ITransactionService, TransactionService>();
 
             services.AddCors(options =>
             {
