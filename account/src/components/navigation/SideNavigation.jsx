@@ -4,7 +4,7 @@ const SideNavigation = () => {
 
   return (
     <>
-      <aside className="col col--3 sidenavigation">
+      <aside className="col col--12 col--lg--3 sidenavigation">
         <NavLink to="/">
           <i className="icon icon-clipboard"></i>
           <h5>Overview</h5>

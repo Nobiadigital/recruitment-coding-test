@@ -9,7 +9,7 @@ const Overview = () => {
   const customerInfo = useContext(Context).customerInfo;
 
   return (
-    <main className="col col--lg--9 overview box-shadow--primary-80">
+    <main className="col col--12 col--lg--9 overview box-shadow--primary-80">
       <Header
         title={`Hi ${customerInfo.customerName},`}
         preamble="welcome back, here is an overview of your account"
