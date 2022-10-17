@@ -1,6 +1,7 @@
 ﻿using MagnetTradeAccountApi.Models.Transactions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Globalization;
 
 namespace MagnetTradeAccountApi.Controllers
 {
@@ -10,7 +11,30 @@ namespace MagnetTradeAccountApi.Controllers
         [HttpGet("summary-fake")]
         public TransactionSummary SummaryFake()
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<TransactionSummary>("{\"currentMonth\":0,\"dueTotal\":0,\"dueDate\":\"Jun 30\",\"overDueTotal\":-4.34,\"daysOfOverDue\":20,\"todayBalance\":-4.34,\"availableCredit\":3004.34,\"lastUpdated\":\"2018-03-28\"}");
+            // Using TransactionRow.Amount as it is defined as a float and will always be consistant //
+            
+            TransactionSummary transactionSummary = new TransactionSummary();
+            transactionSummary.TodayBalance = 0;
+            
+            foreach (TransactionMonth month in ByMonthFake())
+            {
+                foreach (TransactionRow row in month.Transactions)
+                {
+                    transactionSummary.TodayBalance += row.Amount;
+                }
+            }
+
+            transactionSummary.CurrentMonth = 0;
+            transactionSummary.DueTotal = 0;
+            transactionSummary.DueDate = "Jun 30";
+            transactionSummary.OverDueTotal = decimal.Parse("-4,34");
+            transactionSummary.DaysOfOverDue = 20;
+            transactionSummary.AvailableCredit = decimal.Parse("3004,34");
+            transactionSummary.LastUpdated = "2018-03-28";
+
+            return transactionSummary;
+            //return Newtonsoft.Json.JsonConvert.DeserializeObject<TransactionSummary>("{\"currentMonth\":0,\"dueTotal\":0,\"dueDate\":\"Jun 30\",\"overDueTotal\":-4.34,\"daysOfOverDue\":20,\"todayBalance\":-4.34,\"availableCredit\":3004.34,\"lastUpdated\":\"2018-03-28\"}");
+
         }
 
         [HttpGet("by-month-fake")]
