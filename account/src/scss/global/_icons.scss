@@ -1,12 +1,98 @@
 $fontUrl: "static/fonts/";
 
 @font-face {
+    font-family: 'icomoon';
+    src: url('#{$fontUrl}icomoon.eot?i07bck');
+    src: url('#{$fontUrl}icomoon.eot?i07bck#iefix') format('embedded-opentype'), 
+        url('#{$fontUrl}icomoon.ttf?i07bck') format('truetype'), 
+        url('#{$fontUrl}icomoon.woff?i07bck') format('woff'), 
+        url('#{$fontUrl}icomoon.svg?i07bck#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-logotype .path1:before {
+  content: "\e900";
+  color: rgb(255, 255, 255);
+}
+.icon-logotype .path2:before {
+  content: "\e901";
+  margin-left: -2.02734375em;
+  color: rgb(255, 214, 77);
+}
+.icon-logotype .path3:before {
+  content: "\e902";
+  margin-left: -2.02734375em;
+  color: rgb(255, 214, 77);
+}
+.icon-logotype .path4:before {
+  content: "\e903";
+  margin-left: -2.02734375em;
+  color: rgb(255, 214, 77);
+}
+.icon-logotype .path5:before {
+  content: "\e904";
+  margin-left: -2.02734375em;
+  color: rgb(255, 214, 77);
+}
+.icon-logotype .path6:before {
+  content: "\e905";
+  margin-left: -2.02734375em;
+  color: rgb(255, 214, 77);
+}
+.icon-logotype-hz .path1:before {
+  content: "\e906";
+  color: rgb(255, 255, 255);
+}
+.icon-logotype-hz .path2:before {
+  content: "\e907";
+  margin-left: -8.080078125em;
+  color: rgb(255, 214, 77);
+}
+.icon-logotype-hz .path3:before {
+  content: "\e908";
+  margin-left: -8.080078125em;
+  color: rgb(255, 214, 77);
+}
+.icon-logotype-hz .path4:before {
+  content: "\e909";
+  margin-left: -8.080078125em;
+  color: rgb(255, 214, 77);
+}
+.icon-logotype-hz .path5:before {
+  content: "\e90a";
+  margin-left: -8.080078125em;
+  color: rgb(255, 214, 77);
+}
+.icon-logotype-hz .path6:before {
+  content: "\e90b";
+  margin-left: -8.080078125em;
+  color: rgb(255, 214, 77);
+}
+
+@font-face {
   font-family: "icomoon";
-  src: url("#{$fontUrl}icomoon.eot?32zz57");
-  src: url("#{$fontUrl}icomoon.eot?32zz57#iefix") format("embedded-opentype"),
-    url("#{$fontUrl}icomoon.ttf?32zz57") format("truetype"),
-    url("#{$fontUrl}icomoon.woff?32zz57") format("woff"),
-    url("#{$fontUrl}icomoon.svg?32zz57#icomoon") format("svg");
+  src: url("#{$fontUrl}icomoon.eot");
+  src: url("#{$fontUrl}icomoon.eot#iefix") format("embedded-opentype"),
+    url("#{$fontUrl}icomoon.ttf") format("truetype"),
+    url("#{$fontUrl}icomoon.woff") format("woff"),
+    url("#{$fontUrl}icomoon.svg") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
