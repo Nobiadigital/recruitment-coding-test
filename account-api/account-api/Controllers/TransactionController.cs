@@ -10,7 +10,17 @@ namespace MagnetTradeAccountApi.Controllers
         [HttpGet("summary-fake")]
         public TransactionSummary SummaryFake()
         {
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<TransactionSummary>("{\"currentMonth\":0,\"dueTotal\":0,\"dueDate\":\"Jun 30\",\"overDueTotal\":-4.34,\"daysOfOverDue\":20,\"todayBalance\":-4.34,\"availableCredit\":3004.34,\"lastUpdated\":\"2018-03-28\"}");
+            var months = ByMonthFake();
+            decimal total = 0;
+            foreach(var month in months)
+            {
+                decimal sum;
+                Decimal.TryParse(month.Sum.Substring(2), out sum);
+                total += sum;
+            }
+            
+            var str = "{\"currentMonth\":0,\"dueTotal\":0,\"dueDate\":\"Jun 30\",\"overDueTotal\":-4.34,\"daysOfOverDue\":20,\"todayBalance\":-4.34,\"availableCredit\":3004.34,\"lastUpdated\":\"2018-03-28\",\"sumTotal\":"+ total.ToString()+"}";
+            return Newtonsoft.Json.JsonConvert.DeserializeObject<TransactionSummary>(str);
         }
 
         [HttpGet("by-month-fake")]

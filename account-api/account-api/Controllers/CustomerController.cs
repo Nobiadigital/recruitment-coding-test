@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MagnetTradeAccountApi.Controllers
 {
-    //[Authorize]
     [Route("customer")]
     public class CustomerController : Controller
     {

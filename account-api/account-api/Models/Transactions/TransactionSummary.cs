@@ -17,5 +17,7 @@
         public decimal? AvailableCredit { get; set; }
 
         public string LastUpdated { get; set; }
+
+        public double? SumTotal { get; set; }
     }
 }
