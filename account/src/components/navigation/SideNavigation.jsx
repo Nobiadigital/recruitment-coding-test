@@ -12,7 +12,7 @@ const SideNavigation = () => {
 
         <NavLink to="/details">
           <i className="icon icon-user"></i>
-          <h5>Account details</h5>
+          <h5>Account</h5>
         </NavLink>
 
         <NavLink to="/payment">

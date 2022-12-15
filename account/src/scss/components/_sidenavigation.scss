@@ -14,7 +14,7 @@
 
     i {
       display: block;
-      min-width: 60px;
+      width: 60px;
       height: 60px;
       background-color: $accent-1-20;
       border-radius: 50%;
@@ -59,14 +59,47 @@
         font-weight: 600;
       }
 
-      &:after {
-        width: 100%;
-      }
-
       i {
         background-color: $accent-1-40;
         box-shadow: inset 0px 0px 0px 4px $accent-1;
       }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    position: fixed;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    background-color: #fff;
+    box-shadow: 0px -1px 7px rgba(0, 0, 0, 0.14);
+    z-index: 1; 
+
+    a {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      margin: 14px 10px;
+
+      i {
+        width: 44px;
+        height: 44px;
+        font-size: 15px;
+        z-index: 2;
+      }
+
+      h5 {
+        font-size: 12px;
+      }
+
+      flex-direction: column;
+      align-items: center;
+
     }
   }
 }
