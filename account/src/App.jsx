@@ -8,7 +8,6 @@ import History from "./pages/History";
 
 // import components
 import SideNavigation from "./components/navigation/SideNavigation";
-import BottomNavigation from "./components/navigation/BottomNavigation";
 import ContextProvider from "./data/ContextProvider";
 
 const appBasePath =
@@ -48,7 +47,6 @@ function App() {
               </Routes>
             </div>
           </div>
-          <BottomNavigation />
         </div>
       </Router>
     </ContextProvider>
