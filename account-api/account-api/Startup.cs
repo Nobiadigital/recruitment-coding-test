@@ -1,3 +1,4 @@
+using MagnetTradeAccountApi.Injected;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using System.Net;
@@ -10,6 +11,9 @@ namespace MagnetTradeAccountApi
         {
             services.AddControllers();
             services.AddHttpContextAccessor();
+
+            //Map dependency injection
+            services.AddScoped<IThisIsInjected, ThisIsInjected>();
 
             services.AddCors(options =>
             {

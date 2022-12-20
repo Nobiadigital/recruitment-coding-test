@@ -48,7 +48,6 @@ function App() {
               </Routes>
             </div>
           </div>
-          <BottomNavigation />
         </div>
       </Router>
     </ContextProvider>
